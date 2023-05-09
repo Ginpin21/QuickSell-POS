@@ -12,17 +12,13 @@ namespace QuickSell_POS
 {
     public partial class AdminWindow : Form
     {
-        UserControl currentForm = new AdminHomeForm();
+        UserControl currentForm;
         public AdminWindow(Employee currentEmployee)
         {
             InitializeComponent();
             CurrentUserLabel.Text += currentEmployee.Username;
-            CurrentRoleLabel.Text += currentEmployee.Role;
-            ActiveWindowLabel.Text = currentForm.AccessibleName;
-            currentForm.Dock = DockStyle.Fill;
-            MainPanel.Controls.Add(currentForm);
-            MainPanel.Tag = currentForm;
-
+            CurrentRoleLabel.Text += currentEmployee.Role.RoleName;
+            SwitchForms(new AdminHomeForm());
 
         }
         private void SwitchForms(UserControl form)
@@ -35,6 +31,7 @@ namespace QuickSell_POS
                 MainPanel.Controls.Add(currentForm);
                 MainPanel.Tag = currentForm;
                 ActiveWindowLabel.Text = currentForm.AccessibleName;
+                currentForm.BringToFront();
             }
         }
         private void AddUserNavBtn_Click(object sender, EventArgs e)
@@ -55,6 +52,11 @@ namespace QuickSell_POS
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

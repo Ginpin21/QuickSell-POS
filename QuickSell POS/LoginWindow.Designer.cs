@@ -34,9 +34,11 @@
             this.PasswordTxtInput = new System.Windows.Forms.TextBox();
             this.UsernameGroupBox = new System.Windows.Forms.GroupBox();
             this.UsernameTxtInput = new System.Windows.Forms.TextBox();
+            this.LoginScreenLogo = new System.Windows.Forms.PictureBox();
             this.LoginGroupBox.SuspendLayout();
             this.PasswordGroupBox.SuspendLayout();
             this.UsernameGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginScreenLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginGroupBox
@@ -49,7 +51,7 @@
             this.LoginGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginGroupBox.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginGroupBox.ForeColor = System.Drawing.Color.DarkViolet;
-            this.LoginGroupBox.Location = new System.Drawing.Point(350, 250);
+            this.LoginGroupBox.Location = new System.Drawing.Point(350, 367);
             this.LoginGroupBox.Name = "LoginGroupBox";
             this.LoginGroupBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LoginGroupBox.Size = new System.Drawing.Size(500, 500);
@@ -96,6 +98,7 @@
             this.PasswordTxtInput.Location = new System.Drawing.Point(5, 32);
             this.PasswordTxtInput.MaxLength = 30;
             this.PasswordTxtInput.Name = "PasswordTxtInput";
+            this.PasswordTxtInput.PasswordChar = '*';
             this.PasswordTxtInput.Size = new System.Drawing.Size(444, 47);
             this.PasswordTxtInput.TabIndex = 0;
             this.PasswordTxtInput.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
@@ -127,12 +130,24 @@
             this.UsernameTxtInput.TabIndex = 0;
             this.UsernameTxtInput.TextChanged += new System.EventHandler(this.UsernameTxtInput_TextChanged);
             // 
+            // LoginScreenLogo
+            // 
+            this.LoginScreenLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LoginScreenLogo.Image = global::QuickSell_POS.Properties.Resources.quicksell_pos_system_high_resolution_logo_black_on_transparent_background;
+            this.LoginScreenLogo.Location = new System.Drawing.Point(390, 12);
+            this.LoginScreenLogo.Name = "LoginScreenLogo";
+            this.LoginScreenLogo.Size = new System.Drawing.Size(394, 349);
+            this.LoginScreenLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoginScreenLogo.TabIndex = 1;
+            this.LoginScreenLogo.TabStop = false;
+            // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1182, 953);
+            this.Controls.Add(this.LoginScreenLogo);
             this.Controls.Add(this.LoginGroupBox);
             this.MinimumSize = new System.Drawing.Size(800, 800);
             this.Name = "LoginWindow";
@@ -144,6 +159,7 @@
             this.PasswordGroupBox.PerformLayout();
             this.UsernameGroupBox.ResumeLayout(false);
             this.UsernameGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginScreenLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,5 +172,6 @@
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.GroupBox PasswordGroupBox;
         private System.Windows.Forms.TextBox PasswordTxtInput;
+        private System.Windows.Forms.PictureBox LoginScreenLogo;
     }
 }

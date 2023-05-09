@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuickSell_POS.Classes;
 namespace QuickSell_POS
 {
     public partial class AddUserForm : UserControl
@@ -15,16 +15,11 @@ namespace QuickSell_POS
         public AddUserForm()
         {
             InitializeComponent();
-            Dictionary<String, int> comboBoxList = new Dictionary<String, int>
-            {
-                {"Admin",1 },
-                {"Manager",2 },
-                {"Cashier",3 },
-
-            };
-            RoleDropDown.DataSource = new BindingSource(comboBoxList, null);
-            RoleDropDown.DisplayMember = "Key";
-            RoleDropDown.ValueMember = "Value";
+            DatabaseConnection dbCon = new DatabaseConnection("localhost", "root", "", "pos_system");
+            DataTable dt = dbCon.SelectAllQuery("role");
+            RoleDropDown.DataSource = dt;
+            RoleDropDown.DisplayMember = "role_name";
+            RoleDropDown.ValueMember = "role_id";
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
@@ -33,15 +28,21 @@ namespace QuickSell_POS
             {
                 if(PasswordTxtInput.Text== CPasswordTxtInput.Text) {
 
-                    Employee newEmployee = new Employee(UsernameTxtInput.Text, PasswordTxtInput.Text,RoleDropDown.Text);
+                    Employee newEmployee = new Employee(0,UsernameTxtInput.Text, PasswordTxtInput.Text,new Role(Convert.ToInt32(RoleDropDown.SelectedValue),RoleDropDown.SelectedText));
                     DatabaseConnection dbCon = new DatabaseConnection("localhost", "root", "", "pos_system");
                     dbCon.AddEmployeeQuery(newEmployee);
-
+                    UsernameTxtInput.Text = "";
+                    PasswordTxtInput.Text = "";
+                    CPasswordTxtInput.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("Passwords must match", "Password Match Error");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the fields", "Empty Field Error");
             }
         }
     }

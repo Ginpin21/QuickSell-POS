@@ -1,6 +1,6 @@
-﻿namespace QuickSell_POS
+﻿namespace QuickSell_POS.Manager
 {
-    partial class AdminWindow
+    partial class ManagerWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminWindow));
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.CurrentStatusGroupBox = new System.Windows.Forms.GroupBox();
@@ -38,14 +37,12 @@
             this.SidePanel = new System.Windows.Forms.Panel();
             this.ExitPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.NavPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AddUserNavBtn = new System.Windows.Forms.Button();
-            this.ViewUserNavBtn = new System.Windows.Forms.Button();
-            this.EditUserNavBtn = new System.Windows.Forms.Button();
-            this.DeleteUserNavBtn = new System.Windows.Forms.Button();
-            this.LogoBox = new System.Windows.Forms.PictureBox();
             this.HomeNavBtn = new System.Windows.Forms.Button();
+            this.AddCategoryBtn = new System.Windows.Forms.Button();
+            this.AddProductBtn = new System.Windows.Forms.Button();
+            this.ViewProductBtn = new System.Windows.Forms.Button();
+            this.LogoBox = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.CurrentStatusGroupBox.SuspendLayout();
@@ -63,7 +60,7 @@
             this.MainPanel.Location = new System.Drawing.Point(400, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(782, 953);
-            this.MainPanel.TabIndex = 1;
+            this.MainPanel.TabIndex = 3;
             // 
             // TopPanel
             // 
@@ -82,6 +79,7 @@
             this.CurrentStatusGroupBox.Controls.Add(this.CurrentRoleLabel);
             this.CurrentStatusGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentStatusGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CurrentStatusGroupBox.Font = new System.Drawing.Font("Segoe UI", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentStatusGroupBox.ForeColor = System.Drawing.Color.White;
             this.CurrentStatusGroupBox.Location = new System.Drawing.Point(0, 0);
             this.CurrentStatusGroupBox.Name = "CurrentStatusGroupBox";
@@ -139,17 +137,16 @@
             this.SidePanel.Location = new System.Drawing.Point(0, 0);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(400, 953);
-            this.SidePanel.TabIndex = 0;
+            this.SidePanel.TabIndex = 2;
             // 
             // ExitPanel
             // 
             this.ExitPanel.Controls.Add(this.ExitBtn);
-            this.ExitPanel.Controls.Add(this.LogoutBtn);
             this.ExitPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ExitPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.ExitPanel.Location = new System.Drawing.Point(0, 640);
+            this.ExitPanel.Location = new System.Drawing.Point(0, 830);
             this.ExitPanel.Name = "ExitPanel";
-            this.ExitPanel.Size = new System.Drawing.Size(400, 313);
+            this.ExitPanel.Size = new System.Drawing.Size(400, 123);
             this.ExitPanel.TabIndex = 4;
             // 
             // ExitBtn
@@ -161,7 +158,7 @@
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitBtn.ForeColor = System.Drawing.Color.White;
-            this.ExitBtn.Location = new System.Drawing.Point(3, 260);
+            this.ExitBtn.Location = new System.Drawing.Point(3, 70);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(397, 50);
             this.ExitBtn.TabIndex = 2;
@@ -169,111 +166,17 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // LogoutBtn
-            // 
-            this.LogoutBtn.BackColor = System.Drawing.Color.Thistle;
-            this.LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.LogoutBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.LogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.DarkViolet;
-            this.LogoutBtn.Location = new System.Drawing.Point(3, 204);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(397, 50);
-            this.LogoutBtn.TabIndex = 1;
-            this.LogoutBtn.Text = "Logout";
-            this.LogoutBtn.UseVisualStyleBackColor = false;
-            // 
             // NavPanel
             // 
             this.NavPanel.Controls.Add(this.HomeNavBtn);
-            this.NavPanel.Controls.Add(this.AddUserNavBtn);
-            this.NavPanel.Controls.Add(this.ViewUserNavBtn);
-            this.NavPanel.Controls.Add(this.EditUserNavBtn);
-            this.NavPanel.Controls.Add(this.DeleteUserNavBtn);
+            this.NavPanel.Controls.Add(this.AddCategoryBtn);
+            this.NavPanel.Controls.Add(this.AddProductBtn);
+            this.NavPanel.Controls.Add(this.ViewProductBtn);
             this.NavPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NavPanel.Location = new System.Drawing.Point(0, 262);
+            this.NavPanel.Location = new System.Drawing.Point(0, 420);
             this.NavPanel.Name = "NavPanel";
-            this.NavPanel.Size = new System.Drawing.Size(400, 371);
+            this.NavPanel.Size = new System.Drawing.Size(400, 439);
             this.NavPanel.TabIndex = 0;
-            // 
-            // AddUserNavBtn
-            // 
-            this.AddUserNavBtn.BackColor = System.Drawing.Color.White;
-            this.AddUserNavBtn.FlatAppearance.BorderSize = 0;
-            this.AddUserNavBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.AddUserNavBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.AddUserNavBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddUserNavBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddUserNavBtn.ForeColor = System.Drawing.Color.DarkViolet;
-            this.AddUserNavBtn.Location = new System.Drawing.Point(3, 59);
-            this.AddUserNavBtn.Name = "AddUserNavBtn";
-            this.AddUserNavBtn.Size = new System.Drawing.Size(397, 50);
-            this.AddUserNavBtn.TabIndex = 2;
-            this.AddUserNavBtn.Text = "Add User";
-            this.AddUserNavBtn.UseVisualStyleBackColor = false;
-            this.AddUserNavBtn.Click += new System.EventHandler(this.AddUserNavBtn_Click);
-            // 
-            // ViewUserNavBtn
-            // 
-            this.ViewUserNavBtn.BackColor = System.Drawing.Color.White;
-            this.ViewUserNavBtn.FlatAppearance.BorderSize = 0;
-            this.ViewUserNavBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.ViewUserNavBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.ViewUserNavBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewUserNavBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewUserNavBtn.ForeColor = System.Drawing.Color.DarkViolet;
-            this.ViewUserNavBtn.Location = new System.Drawing.Point(3, 115);
-            this.ViewUserNavBtn.Name = "ViewUserNavBtn";
-            this.ViewUserNavBtn.Size = new System.Drawing.Size(397, 50);
-            this.ViewUserNavBtn.TabIndex = 1;
-            this.ViewUserNavBtn.Text = "View Users";
-            this.ViewUserNavBtn.UseVisualStyleBackColor = false;
-            this.ViewUserNavBtn.Click += new System.EventHandler(this.ViewUserNavBtn_Click);
-            // 
-            // EditUserNavBtn
-            // 
-            this.EditUserNavBtn.BackColor = System.Drawing.Color.White;
-            this.EditUserNavBtn.FlatAppearance.BorderSize = 0;
-            this.EditUserNavBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.EditUserNavBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.EditUserNavBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditUserNavBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserNavBtn.ForeColor = System.Drawing.Color.DarkViolet;
-            this.EditUserNavBtn.Location = new System.Drawing.Point(3, 171);
-            this.EditUserNavBtn.Name = "EditUserNavBtn";
-            this.EditUserNavBtn.Size = new System.Drawing.Size(397, 50);
-            this.EditUserNavBtn.TabIndex = 0;
-            this.EditUserNavBtn.Text = "Edit User";
-            this.EditUserNavBtn.UseVisualStyleBackColor = false;
-            // 
-            // DeleteUserNavBtn
-            // 
-            this.DeleteUserNavBtn.BackColor = System.Drawing.Color.White;
-            this.DeleteUserNavBtn.FlatAppearance.BorderSize = 0;
-            this.DeleteUserNavBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.DeleteUserNavBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.DeleteUserNavBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteUserNavBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteUserNavBtn.ForeColor = System.Drawing.Color.DarkViolet;
-            this.DeleteUserNavBtn.Location = new System.Drawing.Point(3, 227);
-            this.DeleteUserNavBtn.Name = "DeleteUserNavBtn";
-            this.DeleteUserNavBtn.Size = new System.Drawing.Size(397, 50);
-            this.DeleteUserNavBtn.TabIndex = 3;
-            this.DeleteUserNavBtn.Text = "Delete User";
-            this.DeleteUserNavBtn.UseVisualStyleBackColor = false;
-            // 
-            // LogoBox
-            // 
-            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoBox.Image")));
-            this.LogoBox.Location = new System.Drawing.Point(0, 0);
-            this.LogoBox.Name = "LogoBox";
-            this.LogoBox.Size = new System.Drawing.Size(400, 262);
-            this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoBox.TabIndex = 1;
-            this.LogoBox.TabStop = false;
             // 
             // HomeNavBtn
             // 
@@ -292,17 +195,78 @@
             this.HomeNavBtn.UseVisualStyleBackColor = false;
             this.HomeNavBtn.Click += new System.EventHandler(this.HomeNavBtn_Click);
             // 
-            // AdminWindow
+            // AddCategoryBtn
+            // 
+            this.AddCategoryBtn.BackColor = System.Drawing.Color.White;
+            this.AddCategoryBtn.FlatAppearance.BorderSize = 0;
+            this.AddCategoryBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.AddCategoryBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.AddCategoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddCategoryBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCategoryBtn.ForeColor = System.Drawing.Color.DarkViolet;
+            this.AddCategoryBtn.Location = new System.Drawing.Point(3, 59);
+            this.AddCategoryBtn.Name = "AddCategoryBtn";
+            this.AddCategoryBtn.Size = new System.Drawing.Size(397, 50);
+            this.AddCategoryBtn.TabIndex = 2;
+            this.AddCategoryBtn.Text = "Add Category";
+            this.AddCategoryBtn.UseVisualStyleBackColor = false;
+            this.AddCategoryBtn.Click += new System.EventHandler(this.AddCategoryBtn_Click);
+            // 
+            // AddProductBtn
+            // 
+            this.AddProductBtn.BackColor = System.Drawing.Color.White;
+            this.AddProductBtn.FlatAppearance.BorderSize = 0;
+            this.AddProductBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.AddProductBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.AddProductBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddProductBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddProductBtn.ForeColor = System.Drawing.Color.DarkViolet;
+            this.AddProductBtn.Location = new System.Drawing.Point(3, 115);
+            this.AddProductBtn.Name = "AddProductBtn";
+            this.AddProductBtn.Size = new System.Drawing.Size(397, 50);
+            this.AddProductBtn.TabIndex = 1;
+            this.AddProductBtn.Text = "Add Product";
+            this.AddProductBtn.UseVisualStyleBackColor = false;
+            this.AddProductBtn.Click += new System.EventHandler(this.AddProductBtn_Click);
+            // 
+            // ViewProductBtn
+            // 
+            this.ViewProductBtn.BackColor = System.Drawing.Color.White;
+            this.ViewProductBtn.FlatAppearance.BorderSize = 0;
+            this.ViewProductBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.ViewProductBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.ViewProductBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewProductBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewProductBtn.ForeColor = System.Drawing.Color.DarkViolet;
+            this.ViewProductBtn.Location = new System.Drawing.Point(3, 171);
+            this.ViewProductBtn.Name = "ViewProductBtn";
+            this.ViewProductBtn.Size = new System.Drawing.Size(397, 50);
+            this.ViewProductBtn.TabIndex = 0;
+            this.ViewProductBtn.Text = "View Products";
+            this.ViewProductBtn.UseVisualStyleBackColor = false;
+            this.ViewProductBtn.Click += new System.EventHandler(this.ViewProductBtn_Click);
+            // 
+            // LogoBox
+            // 
+            this.LogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoBox.Image = global::QuickSell_POS.Properties.Resources.quicksell_pos_system_high_resolution_logo_color_on_transparent_background;
+            this.LogoBox.Location = new System.Drawing.Point(0, 0);
+            this.LogoBox.Name = "LogoBox";
+            this.LogoBox.Size = new System.Drawing.Size(400, 420);
+            this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoBox.TabIndex = 1;
+            this.LogoBox.TabStop = false;
+            // 
+            // ManagerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 953);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SidePanel);
-            this.MinimumSize = new System.Drawing.Size(1200, 1000);
-            this.Name = "AdminWindow";
-            this.Text = "Admin WIndow";
-            this.TopMost = true;
+            this.Name = "ManagerWindow";
+            this.Text = "Manager Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MainPanel.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
@@ -319,22 +283,19 @@
         #endregion
 
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Panel SidePanel;
-        private System.Windows.Forms.FlowLayoutPanel NavPanel;
-        private System.Windows.Forms.Button EditUserNavBtn;
-        private System.Windows.Forms.PictureBox LogoBox;
-        private System.Windows.Forms.Button AddUserNavBtn;
-        private System.Windows.Forms.Button ViewUserNavBtn;
-        private System.Windows.Forms.Button DeleteUserNavBtn;
         private System.Windows.Forms.Panel TopPanel;
+        private System.Windows.Forms.GroupBox CurrentStatusGroupBox;
+        private System.Windows.Forms.Label ActiveWindowLabel;
         private System.Windows.Forms.Label CurrentUserLabel;
+        private System.Windows.Forms.Label CurrentRoleLabel;
+        private System.Windows.Forms.Panel SidePanel;
         private System.Windows.Forms.FlowLayoutPanel ExitPanel;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.GroupBox CurrentStatusGroupBox;
-        private System.Windows.Forms.Label CurrentRoleLabel;
-        private System.Windows.Forms.Label ActiveWindowLabel;
+        private System.Windows.Forms.FlowLayoutPanel NavPanel;
         private System.Windows.Forms.Button HomeNavBtn;
+        private System.Windows.Forms.Button AddCategoryBtn;
+        private System.Windows.Forms.Button AddProductBtn;
+        private System.Windows.Forms.Button ViewProductBtn;
+        private System.Windows.Forms.PictureBox LogoBox;
     }
 }
-

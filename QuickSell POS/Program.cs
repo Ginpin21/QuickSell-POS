@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuickSell_POS.Cashier;
+using QuickSell_POS.Manager;
 namespace QuickSell_POS
 {
     internal static class Program
@@ -18,22 +16,26 @@ namespace QuickSell_POS
             Application.SetCompatibleTextRenderingDefault(false);
             LoginWindow loginForm = new LoginWindow();
             Employee currentEmployee;
-            if (loginForm.ShowDialog() == DialogResult.OK)
-            {
-                currentEmployee = loginForm.CurrentEmployee;
-                switch (currentEmployee.Role)
-                {
-                    case "Admin":
-                        Application.Run(new AdminWindow(currentEmployee));
-                        break;
-                    case "Manager":
-                        Application.Run(new AdminWindow(currentEmployee));
-                        break;
-                    case "Cashier":
-                        Application.Run(new AdminWindow(currentEmployee));
-                        break;
-                }
 
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    currentEmployee = loginForm.CurrentEmployee;
+
+                    switch (currentEmployee.Role.RoleName)
+                    {
+                        case "Admin":
+                            Application.Run(new AdminWindow(currentEmployee));
+                            break;
+                        case "Manager":
+                            Application.Run(new ManagerWindow(currentEmployee));
+                            break;
+                        case "Cashier":
+                            Application.Run(new CashierWindow(currentEmployee));
+                            break;
+                        default:
+                            loginForm.Show();
+                            break;
+                    }
             }
         }
     }
